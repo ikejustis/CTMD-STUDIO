@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOSER TO MY DREAMS | CTMD STUDIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FFFFFF;
+            color: #333333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #FF364F;
+        }
+        
+        .hero-video {
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FF364F;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-tab::after {
+            width: 100%;
+        }
+        
+        .film-card:hover .film-overlay {
+            opacity: 1;
+        }
+        
+        .film-overlay {
+            transition: opacity 0.3s ease;
+        }
+        
+        .trailer-modal {
+            transition: all 0.3s ease;
+        }
+        
+        .modal-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-top: 120px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: #000000;
+                transition: right 0.3s ease;
+                z-index: 40;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" onclick="showSection('home')">
+                <img src="CTMD LOGO NO DROP.png" alt="CTMD Logo" class="h-10">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home-section" onclick="showSection('home')" class="nav-link text-[#FF364F] active-tab">Home</a>
+                <a href="#trailer-section" onclick="showSection('trailer')" class="nav-link text-[#FF364F]">Trailer</a>
+                <a href="#about-section" onclick="showSection('about')" class="nav-link text-[#FF364F]">About</a>
+            </div>
+            
+            <!-- Mobile Hamburger -->
+            <div class="md:hidden">
+                <button class="hamburger focus:outline-none" onclick="toggleMenu()">
+                    <div class="hamburger-line w-6 h-0.5 bg-[#FF364F] mb-1.5 transition-transform"></div>
+                    <div class="hamburger-line w-6 h-0.5 bg-[#FF364F] mb-1.5 transition-opacity"></div>
+                    <div class="hamburger-line w-6 h-0.5 bg-[#FF364F] transition-transform"></div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="nav-menu md:hidden pt-20 px-8">
+            <div class="flex flex-col space-y-6">
+                <a href="#home-section" onclick="showSection('home'); toggleMenu()" class="nav-link text-white text-2xl active-tab">Home</a>
+                <a href="#trailer-section" onclick="showSection('trailer'); toggleMenu()" class="nav-link text-white text-2xl">Trailer</a>
+                <a href="#about-section" onclick="showSection('about'); toggleMenu()" class="nav-link text-white text-2xl">About</a>
+            </div>
+            
+            <div class="absolute bottom-10 left-8 right-8">
+                <div class="flex space-x-4">
+                     <a href="https://www.instagram.com/ctmdreams" target="_blank" class="text-white"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="https://www.youtube.com/@ctmdstudio" target="_blank" class="text-white"><i class="fab fa-youtube text-2xl"></i></a>
+                </div>
+                <div class="flex justify-center md:justify-end">
+                    <img src="CTMD LOGO NO DROP.png" alt="CTMD Logo" class="h-32 w-auto">
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Sections -->
+    <main>
+        <!-- Home Section -->
+        <section id="home-section" class="section active">
+            <!-- Hero Section -->
+            <div class="relative h-screen flex items-center justify-center bg-white">
+                <div class="text-center px-4">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 text-[#FF364F]">CLOSER TO MY DREAMS</h1>
+                    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-[#FF364F]">A tale of our direction</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#trailer-section" onclick="showSection('trailer')" class="border-2 border-[#FF364F] text-[#FF364F] hover:bg-[#FF364F] hover:text-white px-6 py-2 font-medium transition-all">
+                            Watch Trailer
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- Newsletter -->
+            <div class="bg-[#FF364F] bg-opacity-10 py-16 md:py-24">
+                <div class="container mx-auto px-4 max-w-4xl text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Stay Updated</h2>
+                    <p class="text-[#FF364F] mb-8">Subscribe to our newsletter for updates.</p>
+                    
+                    <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+                        <input type="email" placeholder="Email address" class="flex-grow px-6 py-2 rounded-lg bg-white border-2 border-[#FF364F] text-[#FF364F] focus:outline-none">
+                        <button type="submit" class="border-2 border-[#FF364F] text-[#FF364F] hover:bg-[#FF364F] hover:text-white px-6 py-2 font-medium transition-all">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trailer Section -->
+        <section id="trailer-section" class="section hidden">
+            <div class="container mx-auto px-4 py-16 md:py-24">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Latest Trailer</h2>
+                
+                <div class="aspect-w-16 aspect-h-9 bg-black rounded-xl overflow-hidden mb-12">
+                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Coming Soon</h3>
+                        <p class="text-gray-400 mb-6">Exploring the themes of what it means to dream through abstract visual storytelling.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2">Director</h4>
+                            <p class="text-gray-400">Ikedi Nwogu</p>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <button class="bg-[#FF364F] hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-all">
+                                <i class="fab fa-youtube mr-2"></i> YouTube
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-16 text-center py-12">
+                    <h3 class="text-2xl font-bold mb-4">Coming Soon</h3>
+                    <p class="text-gray-400">New projects in development</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about-section" class="section hidden">
+            <div class="container mx-auto px-4 py-16 md:py-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">About CTMD STUDIO</h2>
+                        <p class="text-gray-400 mb-6">Founded by Ikedi Nwogu, a Nigerian-American independent filmmaker and designer, Closer To My Dreams is a creative vision born from a deep, lifelong urge to bring ideas and dreams cultivated in imagination to life. What began as vivid imaginings in adolescence has grown into a profound exploration of identity, memory, and the emotional layers of our world—told through evocative storytelling and visual design. CTMD is the soul of that vision, the story of our dreams, and the tale of our direction. </p>
+                    </div>
+                    
+                    <div class="order-first lg:order-last">
+                        <img src="ABCD ALBUM COVER.jpg"CTMD Director" class="w-full h-auto rounded-lg">
+                    </div>
+                </div>
+                
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Trailer Modal -->
+    <div id="trailer-modal" class="trailer-modal fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all p-4">
+        <div class="relative w-full max-w-4xl">
+            <button onclick="closeTrailerModal()" class="absolute -top-10 right-0 text-white hover:text-[#FF364F] transition-all">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <div class="aspect-w-16 aspect-h-9 bg-black">
+                <iframe id="modal-iframe" class="w-full h-96" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold text-[#FF364F] mb-4">CTMD STUDIO</h3>
+                    <p class="text-gray-600">A tale of our direction.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-[#FF364F] mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home-section" onclick="showSection('home')" class="text-gray-600 hover:text-[#FF364F] transition-all">Home</a></li>
+                        <li><a href="#trailer-section" onclick="showSection('trailer')" class="text-gray-600 hover:text-[#FF364F] transition-all">Trailer</a></li>
+                        <li><a href="#about-section" onclick="showSection('about')" class="text-gray-600 hover:text-[#FF364F] transition-all">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-[#FF364F] mb-4">Contact</h3>
+                    <p class="text-gray-600">info@ctmdstudio.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.instagram.com/ctmdstudio" target="_blank" class="text-gray-600 hover:text-[#FF364F] transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ctmdstudio" target="_blank" class="text-gray-600 hover:text-[#FF364F] transition-all"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 CTMD STUDIO. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Show/hide sections
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(`${sectionId}-section`).classList.remove('hidden');
+            document.getElementById(`${sectionId}-section`).classList.add('active');
+            
+            // Update active tab in navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active-tab');
+            });
+            
+            // Find the clicked link and make it active
+            event.currentTarget.classList.add('active-tab');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Trailer modal functions
+        function openTrailerModal(videoUrl) {
+            const modal = document.getElementById('trailer-modal');
+            const iframe = document.getElementById('modal-iframe');
+            
+            iframe.src = videoUrl;
+            modal.classList.add('modal-open');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeTrailerModal() {
+            const modal = document.getElementById('trailer-modal');
+            const iframe = document.getElementById('modal-iframe');
+            
+            iframe.src = '';
+            modal.classList.remove('modal-open');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!menu.contains(event.target) && !hamburger.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
