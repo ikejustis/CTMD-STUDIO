@@ -113,6 +113,7 @@
                 <a href="#home-section" onclick="showSection('home')" class="nav-link text-[#FF364F] active-tab">Home</a>
                 <a href="#trailer-section" onclick="showSection('trailer')" class="nav-link text-[#FF364F]">Trailer</a>
                 <a href="#about-section" onclick="showSection('about')" class="nav-link text-[#FF364F]">About</a>
+                <a href="#contact-section" onclick="showSection('contact')" class="nav-link text-[#FF364F]">Contact</a>
             </div>
             
             <!-- Mobile Hamburger -->
@@ -131,6 +132,7 @@
                 <a href="#home-section" onclick="showSection('home'); toggleMenu()" class="nav-link text-white text-2xl active-tab">Home</a>
                 <a href="#trailer-section" onclick="showSection('trailer'); toggleMenu()" class="nav-link text-white text-2xl">Trailer</a>
                 <a href="#about-section" onclick="showSection('about'); toggleMenu()" class="nav-link text-white text-2xl">About</a>
+                <a href="#contact-section" onclick="showSection('contact'); toggleMenu()" class="nav-link text-white text-2xl">Contact</a>
             </div>
             
             <div class="absolute bottom-10 left-8 right-8">
@@ -146,28 +148,70 @@
     </nav>
     
     <!-- Main Content Sections -->
-    <main>
+    <main style="position: relative;">
         <!-- Home Section -->
-        <section id="home-section" class="section active">
+        <section id="home-section" class="section active" style="display: block;">
             <!-- Hero Section -->
-            <div class="relative h-screen flex items-center justify-center bg-white">
-                <div class="text-center px-4">
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6 text-[#FF364F]">CLOSER TO MY DREAMS</h1>
-                    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-[#FF364F]">A tale of our direction</p>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#trailer-section" onclick="showSection('trailer')" class="border-2 border-[#FF364F] text-[#FF364F] hover:bg-[#FF364F] hover:text-white px-6 py-2 font-medium transition-all">
-                            Watch Trailer
+              <div class="relative h-screen flex items-center justify-center bg-black">
+                <video autoplay muted loop class="absolute w-full h-full object-cover opacity-70">
+                    <source src="OUR DIRECTION - CTMD STUDIO.mp4" type="video/mp4">
+                </video>
+                <div class="text-center px-4 z-10">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">CLOSER TO MY DREAMS</h1>
+                    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white">A Tale of Our Direction</p>
+                    <div class="flex justify-center">
+                        <a href="#trailer-section" onclick="showSection('trailer')" class="border-2 border-white text-white hover:bg-white hover:text-[#FF364F] px-6 py-2 font-medium transition-all">
+                            Watch Teaser
                         </a>
                     </div>
                 </div>
             </div>
             
             
+            <!-- The Film Section -->
+            <div class="py-16 md:py-24 bg-white">
+                <div class="container mx-auto px-4 max-w-4xl">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">ABCD: A Tale of Our Direction</h2>
+                    <p class="text-gray-600 mb-8 text-center">A story of our becoming from the depths of our imagination.</p>
+                    
+                    <div class="grid grid-cols-3 gap-4 mb-12">
+                        <div class="text-center">
+                            <div class="h-2 w-full bg-[#FF364F] mb-2"></div>
+                            <p class="text-sm font-medium">Teaser</p>
+                            <p class="text-xs text-gray-500">Now Available</p>
+                            <p class="text-xs text-gray-500">More to come</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-2 w-full bg-gray-300 mb-2"></div>
+                            <p class="text-sm font-medium">Trailer</p>
+                            <p class="text-xs text-gray-500">Coming Soon</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-2 w-full bg-gray-300 mb-2"></div>
+                            <p class="text-sm font-medium">Premiere</p>
+                            <p class="text-xs text-gray-500">TBA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision Statement -->
+            <div class="py-16 md:py-24 bg-white">
+                <div class="container mx-auto px-4 max-w-4xl text-center">
+                    <blockquote class="text-1xl md:text-2xl font-bold mb-8 text-[#FF364F]">
+                        "How does one explain the gleam I saw, in the dawn of my adolescence."
+                    </blockquote>
+                    <p class="text-gray-600">
+                        - Ikedi Nwogu
+                    </p>
+                </div>
+            </div>
+
             <!-- Newsletter -->
             <div class="bg-[#FF364F] bg-opacity-10 py-16 md:py-24">
                 <div class="container mx-auto px-4 max-w-4xl text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Stay Updated</h2>
-                    <p class="text-[#FF364F] mb-8">Subscribe to our newsletter for updates.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Join Our Journey</h2>
+                    <p class="text-[#FF364F] mb-8">Be first to see new updates, sneak peeks, other things related to our story, closer to my dreams.</p>
                     
                     <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
                         <input type="email" placeholder="Email address" class="flex-grow px-6 py-2 rounded-lg bg-white border-2 border-[#FF364F] text-[#FF364F] focus:outline-none">
@@ -184,31 +228,63 @@
             <div class="container mx-auto px-4 py-16 md:py-24">
                 <h2 class="text-3xl md:text-4xl font-bold mb-12">Latest Trailer</h2>
                 
-                <div class="bg-black rounded-xl overflow-hidden mb-12 p-12 text-center">
-                    <h3 class="text-2xl text-white mb-6">Watch our content on YouTube</h3>
-                    <a href="https://www.youtube.com/@ctmdstudio" target="_blank" class="inline-block bg-[#FF364F] hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium transition-all">
-                        <i class="fab fa-youtube mr-2"></i> Visit Our Channel
-                    </a>
+                <div class="aspect-w-16 aspect-h-9 mb-12">
+                    <iframe class="w-full h-96 rounded-xl" src="https://www.youtube.com/embed/iEMwJhmjNRc?si=8_3yTRHqEe9G4WSu" title="Our Direction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-2xl font-bold mb-4">Coming Soon</h3>
-                        <p class="text-gray-400 mb-6">Exploring the themes of what it means to dream through abstract visual storytelling.</p>
+                        <h3 class="text-2xl font-bold mb-4">ABCD: A Tale Of Our Direction</h3>
+                        <p class="text-gray-400 mb-6">Even the stillness of my expression could not hide the smile my eyes painted reminiscing the gleam we saw that day.</p>
                     </div>
                     
                     <div>
-                        <div class="mb-6">
-                            <h4 class="font-bold mb-2">Director</h4>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Director</h3>
                             <p class="text-gray-400">Ikedi Nwogu</p>
                         </div>
                         
+
                     </div>
                 </div>
                 
-                <div class="mt-16 text-center py-12">
-                    <h3 class="text-2xl font-bold mb-4">Coming Soon</h3>
-                    <p class="text-gray-400">New projects in development</p>
+                <div class="mt-16">
+                    <div class="bg-[#FF364F] bg-opacity-10 p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4 text-[#FF364F]">Original Soundtrack</h3>
+                        <h4 class="text-xl font-medium mb-2">closer to my dreams (fanfare)</h4>
+                        <p class="text-gray-600 mb-4">An original composition and score by Ikedi Nwogu</p>
+                        <p class="text-gray-500 mb-4 italic">The beauty of music being able to encapsulate a feeling so little words could describe, this composition was an ode to the journey we embarked on in the pursuit of our dreams. Defined in the corner of my mind during the later stages of my formative years, I beg to question, "how can I express the feeling of the mundane joy felt at the beginnings to the ends of our own direction?"</p>
+                        <div class="bg-black p-4 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <div class="flex-1">
+                                    <div class="text-[#FF364F] font-medium">closer to my dreams (fanfare)</div>
+                                    <div class="text-gray-400 text-sm">Ikedi Nwogu</div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <button id="play-btn" class="text-[#FF364F] hover:text-white transition-colors text-xl">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <button id="replay-btn" class="text-[#FF364F] hover:text-white transition-colors text-xl relative">
+                                        <i class="fas fa-redo"></i>
+                                        <div id="replay-indicator" class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF364F] transition-all duration-300"></div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="flex items-center justify-between text-xs text-gray-400 mb-1">
+                                    <span id="current-time">0:00</span>
+                                    <span id="duration">0:00</span>
+                                </div>
+                                <div class="relative w-full h-1 bg-gray-700 rounded-full overflow-hidden">
+                                    <div id="progress-fill" class="absolute top-0 left-0 h-full bg-[#FF364F]" style="width: 0%"></div>
+                                    <input type="range" id="progress-bar" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" min="0" max="100" value="0">
+                                </div>
+                            </div>
+                            <audio id="audio-player" class="hidden">
+                                <source src="ctmd (fanfare) v2.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -219,7 +295,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                     <div>
                         <h2 class="text-3xl md:text-4xl font-bold mb-6">About CTMD STUDIO</h2>
-                        <p class="text-gray-400 mb-6">Founded by Ikedi Nwogu, a Nigerian-American independent filmmaker and designer, Closer To My Dreams is a creative vision born from a deep, lifelong urge to bring ideas and dreams cultivated in imagination to life. What began as vivid imaginings in adolescence has grown into a profound exploration of identity, memory, and the emotional layers of our world—told through evocative storytelling and visual design. CTMD is the soul of that vision, the story of our dreams, and the tale of our direction. </p>
+                        <p class="text-gray-400 mb-6">Founded by Ikedi Nwogu, a Nigerian-American independent filmmaker and designer, Closer To My Dreams is a vision born from a deep, lifelong urge dedicated to bringing the ideas and dreams cultivated in imagination to life. What began as vivid imagings in adolescence from the cradle of youth has grown into a profound devotion to this identity, the articulation of this unconscious experience, and the expression of the evocative layers of our world, told through the means of storytelling and visual design. CTMD is the soul of that vision, the story of our dreams, and the tale of our direction. </p>
                     </div>
                     
                     <div class="order-first lg:order-last">
@@ -229,6 +305,32 @@
                 
 
 
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="section hidden">
+            <div class="container mx-auto px-4 py-16 md:py-24">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Contact Us</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="space-y-4">
+                            <div class="mb-6">
+                                <h4 class="text-xl font-bold mb-2">Email</h4>
+                                <p class="text-gray-400 text-lg">info@ctmdstudio.com</p>
+                            </div>
+                            <div class="mb-6">
+                                <h4 class="text-xl font-bold mb-2">Social Media</h4>
+                                <div class="flex space-x-4">
+                                    <a href="https://www.instagram.com/ctmdstudio" target="_blank" class="text-[#FF364F] hover:text-[#d42d44] transition-all"><i class="fab fa-instagram text-2xl"></i></a>
+                                    <a href="https://www.youtube.com/@ctmdstudio" target="_blank" class="text-[#FF364F] hover:text-[#d42d44] transition-all"><i class="fab fa-youtube text-2xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -279,17 +381,171 @@
     </footer>
     
     <script>
-        // Show/hide sections
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.add('hidden');
-                section.classList.remove('active');
-            });
+        // Custom audio player controls
+        const audioPlayer = document.getElementById('audio-player');
+        const playBtn = document.getElementById('play-btn');
+        const replayBtn = document.getElementById('replay-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+
+        // Play/pause toggle
+        playBtn.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                audioPlayer.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+
+        // Replay functionality
+        let isRepeating = false;
+        replayBtn.addEventListener('click', () => {
+            audioPlayer.currentTime = 0;
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isRepeating = !isRepeating;
+            const indicator = document.getElementById('replay-indicator');
+            if (isRepeating) {
+                indicator.classList.add('w-full');
+            } else {
+                indicator.classList.remove('w-full');
+            }
+        });
+
+        // Update progress bar
+        audioPlayer.addEventListener('timeupdate', () => {
+            const currentTime = audioPlayer.currentTime;
+            const duration = audioPlayer.duration;
+            const progressPercent = (currentTime / duration) * 100;
+            progressBar.value = progressPercent;
+            document.getElementById('progress-fill').style.width = `${progressPercent}%`;
             
-            // Show selected section
-            document.getElementById(`${sectionId}-section`).classList.remove('hidden');
-            document.getElementById(`${sectionId}-section`).classList.add('active');
+            // Format time for display
+            currentTimeEl.textContent = formatTime(currentTime);
+            if (duration) {
+                durationEl.textContent = formatTime(duration);
+            }
+        });
+
+        // Seek functionality
+        progressBar.addEventListener('input', () => {
+            const seekTime = (progressBar.value / 100) * audioPlayer.duration;
+            audioPlayer.currentTime = seekTime;
+        });
+
+        // Format time (seconds to MM:SS)
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // When audio ends
+        audioPlayer.addEventListener('ended', () => {
+            if (isRepeating) {
+                audioPlayer.currentTime = 0;
+                audioPlayer.play();
+            } else {
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                progressBar.value = 0;
+                currentTimeEl.textContent = '0:00';
+            }
+        });
+
+        // Meadow audio player controls
+        const audioPlayerMeadow = document.getElementById('audio-player-meadow');
+        const playBtnMeadow = document.getElementById('play-btn-meadow');
+        const replayBtnMeadow = document.getElementById('replay-btn-meadow');
+        const progressBarMeadow = document.getElementById('progress-bar-meadow');
+        const currentTimeElMeadow = document.getElementById('current-time-meadow');
+        const durationElMeadow = document.getElementById('duration-meadow');
+
+        // Play/pause toggle for meadow
+        playBtnMeadow.addEventListener('click', () => {
+            if (audioPlayerMeadow.paused) {
+                audioPlayerMeadow.play();
+                playBtnMeadow.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                audioPlayerMeadow.pause();
+                playBtnMeadow.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+
+        // Replay functionality for meadow
+        let isRepeatingMeadow = false;
+        replayBtnMeadow.addEventListener('click', () => {
+            audioPlayerMeadow.currentTime = 0;
+            if (audioPlayerMeadow.paused) {
+                audioPlayerMeadow.play();
+                playBtnMeadow.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isRepeatingMeadow = !isRepeatingMeadow;
+            const indicator = document.getElementById('replay-indicator-meadow');
+            if (isRepeatingMeadow) {
+                indicator.classList.add('w-full');
+            } else {
+                indicator.classList.remove('w-full');
+            }
+        });
+
+        // Update progress bar for meadow
+        audioPlayerMeadow.addEventListener('timeupdate', () => {
+            const currentTime = audioPlayerMeadow.currentTime;
+            const duration = audioPlayerMeadow.duration;
+            const progressPercent = (currentTime / duration) * 100;
+            progressBarMeadow.value = progressPercent;
+            document.getElementById('progress-fill-meadow').style.width = `${progressPercent}%`;
+            
+            // Format time for display
+            currentTimeElMeadow.textContent = formatTime(currentTime);
+            if (duration) {
+                durationElMeadow.textContent = formatTime(duration);
+            }
+        });
+
+        // Seek functionality for meadow
+        progressBarMeadow.addEventListener('input', () => {
+            const seekTime = (progressBarMeadow.value / 100) * audioPlayerMeadow.duration;
+            audioPlayerMeadow.currentTime = seekTime;
+        });
+
+        // When meadow audio ends
+        audioPlayerMeadow.addEventListener('ended', () => {
+            if (isRepeatingMeadow) {
+                audioPlayerMeadow.currentTime = 0;
+                audioPlayerMeadow.play();
+            } else {
+                playBtnMeadow.innerHTML = '<i class="fas fa-play"></i>';
+                progressBarMeadow.value = 0;
+                currentTimeElMeadow.textContent = '0:00';
+            }
+        });
+
+        // Show/hide sections with transitions
+        function showSection(sectionId) {
+            const currentActive = document.querySelector('.section.active');
+            const newSection = document.getElementById(`${sectionId}-section`);
+            
+            if (currentActive) {
+                currentActive.classList.remove('active');
+                setTimeout(() => {
+                    currentActive.style.display = 'none';
+                    newSection.style.display = 'block';
+                    setTimeout(() => {
+                        newSection.classList.add('active');
+                    }, 10);
+                }, 500); // Match this with CSS transition duration
+            } else {
+                newSection.style.display = 'block';
+                setTimeout(() => {
+                    newSection.classList.add('active');
+                }, 10);
+            }
             
             // Update active tab in navigation
             document.querySelectorAll('.nav-link').forEach(link => {
