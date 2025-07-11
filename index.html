@@ -11,13 +11,35 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #FFFFFF;
-            color: #333333;
+            background-color: #0a0a0a;
+            color: #f8f8f8;
             overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            color: #FF364F;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: #cccccc;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .hero-video {
@@ -102,26 +124,26 @@
 </head>
 <body class="min-h-screen">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white border-b border-gray-200">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 bg-black bg-opacity-90 border-b border-gray-800">
+        <div class="container flex justify-between items-center py-6">
             <a href="#" onclick="showSection('home')">
-                <img src="CTMD LOGO NO DROP.png" alt="CTMD Logo" class="h-10">
+                <img src="CTMD LOGO NO DROP.png" alt="CTMD Logo" class="h-8">
             </a>
             
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#home-section" onclick="showSection('home')" class="nav-link text-[#FF364F] active-tab">Home</a>
-                <a href="#trailer-section" onclick="showSection('trailer')" class="nav-link text-[#FF364F]">Trailer</a>
-                <a href="#about-section" onclick="showSection('about')" class="nav-link text-[#FF364F]">About</a>
-                <a href="#contact-section" onclick="showSection('contact')" class="nav-link text-[#FF364F]">Contact</a>
+            <div class="hidden md:flex space-x-10">
+                <a href="#home-section" onclick="showSection('home')" class="nav-link uppercase text-sm tracking-wider">Home</a>
+                <a href="#trailer-section" onclick="showSection('trailer')" class="nav-link uppercase text-sm tracking-wider">ABCD</a>
+                <a href="#about-section" onclick="showSection('about')" class="nav-link uppercase text-sm tracking-wider">About</a>
+                <a href="#contact-section" onclick="showSection('contact')" class="nav-link uppercase text-sm tracking-wider">Contact</a>
             </div>
             
             <!-- Mobile Hamburger -->
             <div class="md:hidden">
                 <button class="hamburger focus:outline-none" onclick="toggleMenu()">
-                    <div class="hamburger-line w-6 h-0.5 bg-[#FF364F] mb-1.5 transition-transform"></div>
-                    <div class="hamburger-line w-6 h-0.5 bg-[#FF364F] mb-1.5 transition-opacity"></div>
-                    <div class="hamburger-line w-6 h-0.5 bg-[#FF364F] transition-transform"></div>
+                    <div class="hamburger-line w-6 h-0.5 bg-white mb-1.5 transition-transform"></div>
+                    <div class="hamburger-line w-6 h-0.5 bg-white mb-1.5 transition-opacity"></div>
+                    <div class="hamburger-line w-6 h-0.5 bg-white transition-transform"></div>
                 </button>
             </div>
         </div>
@@ -130,7 +152,7 @@
         <div class="nav-menu md:hidden pt-20 px-8">
             <div class="flex flex-col space-y-6">
                 <a href="#home-section" onclick="showSection('home'); toggleMenu()" class="nav-link text-white text-2xl active-tab">Home</a>
-                <a href="#trailer-section" onclick="showSection('trailer'); toggleMenu()" class="nav-link text-white text-2xl">Trailer</a>
+                <a href="#trailer-section" onclick="showSection('trailer'); toggleMenu()" class="nav-link text-white text-2xl">ABCD</a>
                 <a href="#about-section" onclick="showSection('about'); toggleMenu()" class="nav-link text-white text-2xl">About</a>
                 <a href="#contact-section" onclick="showSection('contact'); toggleMenu()" class="nav-link text-white text-2xl">Contact</a>
             </div>
@@ -152,15 +174,16 @@
         <!-- Home Section -->
         <section id="home-section" class="section active" style="display: block;">
             <!-- Hero Section -->
-                <div class="relative h-screen flex items-center justify-center bg-black">
-                <video autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload nofullscreen" class="absolute w-full h-full object-cover opacity-70">
+            <div class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
+                <video autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload nofullscreen" class="absolute w-full h-full object-cover">
                     <source src="OUR DIRECTION - CTMD STUDIO.mp4" type="video/mp4">
                 </video>
-                <div class="text-center px-4 z-10">
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">CLOSER TO MY DREAMS</h1>
-                    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white">A Tale of Our Direction</p>
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="container relative z-10 text-center">
+                    <h1 class="text-6xl md:text-8xl font-bold mb-6 uppercase tracking-tighter">CLOSER TO MY DREAMS</h1>
+                    <p class="text-xl md:text-2xl mb-12 max-w-2xl mx-auto">A Tale of Our Direction</p>
                     <div class="flex justify-center">
-                        <a href="#trailer-section" onclick="showSection('trailer')" class="border-2 border-white text-white hover:bg-white hover:text-[#FF364F] px-6 py-2 font-medium transition-all">
+                        <a href="#trailer-section" onclick="showSection('trailer')" class="border border-white px-8 py-3 uppercase text-sm tracking-wider hover:bg-white hover:text-black transition-all">
                             Watch Teaser
                         </a>
                     </div>
@@ -169,64 +192,64 @@
             
             
             <!-- The Film Section -->
-            <div class="py-16 md:py-24 bg-white">
-                <div class="container mx-auto px-4 max-w-4xl">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">ABCD: A Tale of Our Direction</h2>
-                    <p class="text-gray-600 mb-8 text-center">A story of our becoming from the depths of our imagination.</p>
-                    
-                    <div class="grid grid-cols-3 gap-4 mb-12">
-                        <div class="text-center">
-                            <div class="h-2 w-full bg-[#FF364F] mb-2"></div>
-                            <p class="text-sm font-medium">Teaser</p>
-                            <p class="text-xs text-gray-500">Now Available</p>
-                            <p class="text-xs text-gray-500">More to come</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="h-2 w-full bg-gray-300 mb-2"></div>
-                            <p class="text-sm font-medium">Trailer</p>
-                            <p class="text-xs text-gray-500">Coming Soon</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="h-2 w-full bg-gray-300 mb-2"></div>
-                            <p class="text-sm font-medium">Premiere</p>
-                            <p class="text-xs text-gray-500">TBA</p>
+            <div class="section bg-black">
+                <div class="container">
+                    <div class="max-w-3xl mx-auto text-center">
+                        <h2 class="text-4xl md:text-5xl mb-8 text-[#FF364F]">ABCD: A Tale of Our Direction</h2>
+                        <p class="text-[#FFFFFF] mb-12 text-lg">A story of our becoming from the depths of our imagination.</p>
+                        
+                        <div class="grid grid-cols-3 gap-8">
+                            <div class="text-center">
+                                <div class="h-1 w-full bg-[#FF364F] mb-3"></div>
+                                <p class="text-sm uppercase tracking-wider mb-1">Teaser</p>
+                                <p class="text-xs text-gray-500">Now Available</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="h-1 w-full bg-gray-700 mb-3"></div>
+                                <p class="text-sm uppercase tracking-wider mb-1">Trailer</p>
+                                <p class="text-xs text-gray-500">Coming Soon</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="h-1 w-full bg-gray-700 mb-3"></div>
+                                <p class="text-sm uppercase tracking-wider mb-1">Premiere</p>
+                                <p class="text-xs text-gray-500">TBA</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Vision Statement -->
-            <div class="py-16 md:py-24 bg-white">
-                <div class="container mx-auto px-4 max-w-4xl text-center">
-                    <blockquote class="text-1xl md:text-2xl font-bold mb-8 text-[#FF364F]">
+            <div class="py-16 md:py-24 bg-black">
+              <div class="container mx-auto px-4 max-w-4xl text-center">
+                    <blockquote class="text-gray-400 mb-12 text-lg" style="text-shadow: 0 0 8px rgba(255,255,255,0.8);">
                         "How does one explain the gleam I saw, in the dawn of my adolescence."
-                    </blockquote>
-                    <p class="text-gray-600">
+                    </blockquote>    
+                    <p class="text-white">
                         - Ikedi Nwogu
                     </p>
                 </div>
             </div>
 
             <!-- Newsletter -->
-            <div class="bg-[#FF364F] bg-opacity-10 py-16 md:py-24">
+<div class="bg-black bg-opacity-10 py-16 md:py-24">
                 <div class="container mx-auto px-4 max-w-4xl text-center">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">Join Our Journey</h2>
-                    <p class="text-[#FF364F] mb-8">Be first to see new updates, sneak peeks, other things related to our story, closer to my dreams.</p>
+                    <p class="text-gray-400 mb-8">Be first to see new updates, sneak peeks, other things related to our story, closer to my dreams.</p>
                     
                     <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
-                        <input type="email" placeholder="Email address" class="flex-grow px-6 py-2 rounded-lg bg-white border-2 border-[#FF364F] text-[#FF364F] focus:outline-none">
-                        <button type="submit" class="border-2 border-[#FF364F] text-[#FF364F] hover:bg-[#FF364F] hover:text-white px-6 py-2 font-medium transition-all">
+                        <input type="email" placeholder="Email address" class="flex-grow px-6 py-3 rounded-lg bg-black border border-[#FF364F] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF364F] transition-all">
+                        <button type="submit" class="border border-[#FF364F] bg-transparent text-[#FF364F] hover:bg-[#FF364F] hover:text-white px-6 py-3 font-medium uppercase tracking-wider text-sm transition-all">
                             Subscribe
                         </button>
                     </form>
-                </div>
             </div>
         </section>
         
         <!-- Trailer Section -->
         <section id="trailer-section" class="section hidden">
             <div class="container mx-auto px-4 py-16 md:py-24">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12">Latest Trailer</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 mt-24 md:mt-16">Latest Teaser</h2>
                 
                 <div class="aspect-w-16 aspect-h-9 mb-12">
                     <iframe class="w-full h-96 rounded-xl" src="https://www.youtube.com/embed/iEMwJhmjNRc?si=8_3yTRHqEe9G4WSu" title="Our Direction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -249,7 +272,7 @@
                 </div>
                 
                 <div class="mt-16">
-                    <div class="bg-[#FF364F] bg-opacity-10 p-8 rounded-xl">
+                    <div class="bg-black bg-opacity-10 p-8 rounded-xl border border-white">
                         <h3 class="text-2xl font-bold mb-4 text-[#FF364F]">Original Soundtrack</h3>
                         <h4 class="text-xl font-medium mb-2">closer to my dreams (fanfare)</h4>
                         <p class="text-gray-600 mb-4">An original composition and score by Ikedi Nwogu</p>
@@ -293,13 +316,13 @@
         <section id="about-section" class="section hidden">
             <div class="container mx-auto px-4 py-16 md:py-24">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div>
-                        <h2 class="text-3xl md:text-4xl font-bold mb-6">About CTMD STUDIO</h2>
+                    <div class="p-8 rounded-lg">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#ffffff]">About CTMD STUDIO</h2>
                         <p class="text-gray-400 mb-6">Founded by Ikedi Nwogu, a Nigerian-American independent filmmaker and designer, Closer To My Dreams is a vision born from a deep, lifelong urge dedicated to bringing the ideas and dreams cultivated in imagination to life. What began as vivid imagings in adolescence from the cradle of youth has grown into a profound devotion to this identity, the articulation of this unconscious experience, and the expression of the evocative layers of our world, told through the means of storytelling and visual design. CTMD is the soul of that vision, the story of our dreams, and the tale of our direction. </p>
                     </div>
                     
                     <div class="order-first lg:order-last">
-                        <img src="ABCD ALBUM COVER.jpg"CTMD Director" class="w-full h-auto rounded-lg">
+                        <img src="ABCD LOGO V2.png" alt="CTMD Director" class="w-full h-auto rounded-lg">
                     </div>
                 </div>
                 
@@ -312,17 +335,18 @@
         <!-- Contact Section -->
         <section id="contact-section" class="section hidden">
             <div class="container mx-auto px-4 py-16 md:py-24">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12">Contact Us</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 mt-24 md:mt-16">Contact Us</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <div class="space-y-4">
+                               <div class="space-y-4">
                             <div class="mb-6">
-                                <h4 class="text-xl font-bold mb-2">Email</h4>
-                                <p class="text-gray-400 text-lg">info@ctmdstudio.com</p>
+                                <h4 class="text-lg font-bold mb-2">Email</h4>
+                                <p class="text-gray-400">info@ctmdstudio.com</p>
+                            </div>
                             </div>
                             <div class="mb-6">
-                                <h4 class="text-xl font-bold mb-2">Social Media</h4>
+                                <h4 class="text-lg font-bold mb-2">Social Media</h4>
                                 <div class="flex space-x-4">
                                     <a href="https://www.instagram.com/ctmdstudio" target="_blank" class="text-[#FF364F] hover:text-[#d42d44] transition-all"><i class="fab fa-instagram text-2xl"></i></a>
                                     <a href="https://www.youtube.com/@ctmdstudio" target="_blank" class="text-[#FF364F] hover:text-[#d42d44] transition-all"><i class="fab fa-youtube text-2xl"></i></a>
@@ -350,31 +374,31 @@
     </div>
     
     <!-- Footer -->
-    <footer class="bg-white py-12 border-t border-gray-200">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="bg-black py-16 border-t border-gray-800">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div>
-                    <h3 class="text-lg font-bold text-[#FF364F] mb-4">CTMD STUDIO</h3>
-                    <p class="text-gray-600">A tale of our direction.</p>
+                    <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">CTMD STUDIO</h3>
+                    <p class="text-gray-400">A tale of our direction.</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold text-[#FF364F] mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#home-section" onclick="showSection('home')" class="text-gray-600 hover:text-[#FF364F] transition-all">Home</a></li>
-                        <li><a href="#trailer-section" onclick="showSection('trailer')" class="text-gray-600 hover:text-[#FF364F] transition-all">Trailer</a></li>
-                        <li><a href="#about-section" onclick="showSection('about')" class="text-gray-600 hover:text-[#FF364F] transition-all">About</a></li>
+                    <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home-section" onclick="showSection('home')" class="text-gray-400 hover:text-white transition-all">Home</a></li>
+                        <li><a href="#trailer-section" onclick="showSection('trailer')" class="text-gray-400 hover:text-white transition-all">ABCD</a></li>
+                        <li><a href="#about-section" onclick="showSection('about')" class="text-gray-400 hover:text-white transition-all">About</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold text-[#FF364F] mb-4">Contact</h3>
-                    <p class="text-gray-600">info@ctmdstudio.com</p>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="https://www.instagram.com/ctmdstudio" target="_blank" class="text-gray-600 hover:text-[#FF364F] transition-all"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@ctmdstudio" target="_blank" class="text-gray-600 hover:text-[#FF364F] transition-all"><i class="fab fa-youtube"></i></a>
+                    <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Contact</h3>
+                    <p class="text-gray-400 mb-4">info@ctmdstudio.com</p>
+                    <div class="flex space-x-6">
+                        <a href="https://www.instagram.com/ctmdstudio" target="_blank" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.youtube.com/@ctmdstudio" target="_blank" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-youtube text-xl"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm">
                 &copy; 2025 CTMD STUDIO. All rights reserved.
             </div>
         </div>
@@ -530,6 +554,13 @@
         function showSection(sectionId) {
             const currentActive = document.querySelector('.section.active');
             const newSection = document.getElementById(`${sectionId}-section`);
+            
+            // Update body class for about page styling
+            if (sectionId === 'about') {
+                document.body.classList.add('about-page');
+            } else {
+                document.body.classList.remove('about-page');
+            }
             
             if (currentActive) {
                 currentActive.classList.remove('active');
