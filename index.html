@@ -88,6 +88,15 @@
             pointer-events: auto;
         }
         
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
         @media (max-width: 768px) {
             .hero-content {
                 padding-top: 120px;
@@ -234,12 +243,15 @@
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">Stay Tuned</h2>
                     <p class="text-gray-400 mb-8">Be first to see new updates, sneak peeks, other things related to our story, closer to my dreams.</p>
                     
-                    <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
-                        <input type="email" placeholder="Email address" class="flex-grow px-6 py-3 rounded-lg bg-black border border-[#FF364F] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF364F] transition-all">
+                    <form id="newsletter-form" class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+                        <input type="email" id="newsletter-email" placeholder="Email address" class="flex-grow px-6 py-3 rounded-lg bg-black border border-[#FF364F] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF364F] transition-all" required>
                         <button type="submit" class="border border-[#FF364F] bg-transparent text-[#FF364F] hover:bg-[#FF364F] hover:text-white px-6 py-3 font-medium uppercase tracking-wider text-sm transition-all">
                             Subscribe
                         </button>
                     </form>
+                    <div id="subscribe-success" class="hidden max-w-lg mx-auto mt-4 p-4 bg-[#FF364F] bg-opacity-20 border border-[#FF364F] rounded-lg text-center">
+                        <p class="text-[#FF364F]">Thank you for subscribing! You'll be the first to know about our updates.</p>
+                    </div>
             </div>
         </section>
         
@@ -396,6 +408,33 @@
     </footer>
     
     <script>
+        // Newsletter form handling
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('newsletter-email').value;
+            const successMsg = document.getElementById('subscribe-success');
+            
+            // In a real app, you would send this to your backend here
+            console.log('Subscribed email:', email);
+            
+            // Show success message
+            successMsg.classList.remove('hidden');
+            successMsg.classList.add('animate-fadeIn');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.add('opacity-0');
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                    successMsg.classList.remove('opacity-0', 'animate-fadeIn');
+                }, 500);
+            }, 5000);
+        });
+
         // Custom audio player controls
         const audioPlayer = document.getElementById('audio-player');
         const playBtn = document.getElementById('play-btn');
