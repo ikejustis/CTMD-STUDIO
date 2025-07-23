@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLOSER TO MY DREAMS | CTMD STUDIO</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <link rel="icon" href="android-chrome-192x192.png" type="image/png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="./styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
         
@@ -17,6 +17,35 @@
             background-color: #0a0a0a;
             color: #f8f8f8;
             overflow-x: hidden;
+            cursor: url('cursor-default.svg'), auto;
+        }
+
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(10, 10, 10, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom cursor for interactive elements */
+        a, button, .interactive {
+            cursor: url('cursor-pointer.svg'), pointer;
+        }
+
+        /* Particle animation for hero section */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Enhanced accessibility contrast */
+        .text-[#FF364F] {
+            color: #FF364F;
+            text-shadow: 0 0 10px rgba(255, 54, 79, 0.3);
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -154,7 +183,7 @@
 </head>
 <body class="min-h-screen">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-black bg-opacity-90 border-b border-gray-800">
+    <nav class="fixed w-full z-50 glass border-b border-gray-800">
         <div class="container flex justify-between items-center py-6">
             <a href="#" onclick="showSection('home')">
                 <img src="CTMD LOGO NO DROP.png" alt="CTMD Logo" class="h-8">
@@ -200,7 +229,7 @@
     </nav>
     
     <!-- Main Content Sections -->
-    <main style="position: relative;">
+    <main style="position: relative;" class="relative">
         <!-- Home Section -->
         <section id="home-section" class="section active" style="display: block;">
             <!-- Hero Section -->
@@ -434,7 +463,32 @@
         </div>
     </footer>
     
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: "#FF364F" },
+                        shape: { type: "circle" },
+                        opacity: { value: 0.5, random: true },
+                        size: { value: 3, random: true },
+                        line_linked: { enable: true, distance: 150, color: "#FF364F", opacity: 0.4, width: 1 },
+                        move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "grab" },
+                            onclick: { enable: true, mode: "push" }
+                        }
+                    }
+                });
+            }
+        });
+
         // Newsletter form handling
         document.getElementById('newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
