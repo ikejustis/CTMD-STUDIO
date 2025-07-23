@@ -8,7 +8,7 @@
     <link rel="icon" href="android-chrome-192x192.png" type="image/png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
-   <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
         
@@ -190,11 +190,15 @@
             </a>
             
             <!-- Desktop Navigation - Simplified -->
-            <div class="hidden md:flex space-x-8">
+            <div class="hidden md:flex items-center space-x-8">
                 <a href="#home-section" onclick="showSection('home')" class="nav-link uppercase text-sm tracking-wider px-4 py-2 rounded-lg transition-all duration-300">Home</a>
                 <a href="#trailer-section" onclick="showSection('trailer')" class="nav-link uppercase text-sm tracking-wider px-4 py-2 rounded-lg transition-all duration-300">ABCD</a>
                 <a href="#about-section" onclick="showSection('about')" class="nav-link uppercase text-sm tracking-wider px-4 py-2 rounded-lg transition-all duration-300">About</a>
                 <a href="#contact-section" onclick="showSection('contact')" class="nav-link uppercase text-sm tracking-wider px-4 py-2 rounded-lg transition-all duration-300">Contact</a>
+                <div class="flex space-x-4 ml-4">
+                    <a href="https://www.instagram.com/ctmdstudio" target="_blank" class="text-white hover:text-[#FF364F] transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ctmdstudio" target="_blank" class="text-white hover:text-[#FF364F] transition-all"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
             
             <!-- Mobile Hamburger -->
@@ -337,13 +341,13 @@
                                     <div class="text-[#FF364F] font-medium">closer to my dreams (fanfare)</div>
                                     <div class="text-gray-400 text-sm"></div>
                                 </div>
-                                <div class="flex items-center space-x-4">
-                                    <button id="play-btn" class="text-[#FF364F] hover:text-white transition-colors text-xl">
+                                <div class="flex items-center space-x-6">
+                                    <button id="play-btn" class="text-[#FF364F] hover:text-white transition-colors text-2xl">
                                         <i class="fas fa-play"></i>
                                     </button>
-                                    <button id="replay-btn" class="text-[#FF364F] hover:text-white transition-colors text-xl relative">
+                                    <button id="replay-btn" class="text-[#FF364F] hover:text-white transition-colors text-xl relative group">
                                         <i class="fas fa-redo"></i>
-                                        <div id="replay-indicator" class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF364F] transition-all duration-300"></div>
+                                        <div id="replay-indicator" class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF364F] transition-all duration-300 group-hover:w-full"></div>
                                     </button>
                                 </div>
                             </div>
